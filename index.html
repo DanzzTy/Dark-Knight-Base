@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Dark Knight</title>
+
+<style>
+
+body{
+background:#050b14;
+font-family:Arial;
+color:white;
+margin:0;
+}
+
+.container{
+padding:20px;
+}
+
+.login-box{
+background:#0b1625;
+border:1px solid #00d9ff;
+box-shadow:0 0 15px #00d9ff;
+border-radius:12px;
+padding:25px;
+max-width:350px;
+margin:100px auto;
+text-align:center;
+}
+
+.logo{
+width:120px;
+border-radius:15px;
+box-shadow:0 0 15px #00d9ff;
+}
+
+input{
+width:90%;
+padding:10px;
+margin:10px;
+border:none;
+border-radius:8px;
+background:#0e1e32;
+color:white;
+outline:none;
+}
+
+button{
+background:#00d9ff;
+border:none;
+padding:10px 20px;
+border-radius:10px;
+color:black;
+font-weight:bold;
+cursor:pointer;
+box-shadow:0 0 10px #00d9ff;
+}
+
+.panel{
+display:none;
+}
+
+.menu{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:10px;
+margin-top:20px;
+}
+
+.box{
+background:#0e1e32;
+border:1px solid #00d9ff;
+padding:20px;
+text-align:center;
+border-radius:10px;
+box-shadow:0 0 10px #00d9ff;
+}
+
+.change-pass{
+margin-top:20px;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="login-box" id="login">
+
+<img src="logo.jpg" class="logo">
+
+<h2>Dark Knight Login</h2>
+
+<input id="user" placeholder="Username">
+
+<input id="pass" type="password" placeholder="Password">
+
+<button onclick="login()">LOGIN</button>
+
+</div>
+
+
+<div class="panel" id="panel">
+
+<h2>⚡ Dark Knight Dashboard</h2>
+
+<div class="menu">
+
+<div class="box">Tools</div>
+<div class="box">Sender</div>
+<div class="box">Info</div>
+<div class="box">Settings</div>
+
+</div>
+
+<div class="change-pass">
+
+<h3>Change Password</h3>
+
+<input id="newpass" placeholder="New Password">
+
+<button onclick="changePass()">Change</button>
+
+</div>
+
+</div>
+
+</div>
+
+
+<script>
+
+let users = {
+"Danzz":"240312",
+"Kalzz":"1234"
+}
+
+let currentUser=""
+
+function login(){
+
+let u=document.getElementById("user").value
+let p=document.getElementById("pass").value
+
+if(users[u]==p){
+
+currentUser=u
+
+document.getElementById("login").style.display="none"
+document.getElementById("panel").style.display="block"
+
+}else{
+
+alert("Login gagal")
+
+}
+
+}
+
+function changePass(){
+
+let np=document.getElementById("newpass").value
+
+users[currentUser]=np
+
+alert("Password berhasil diganti")
+
+}
+
+</script>
+
+</body>
+</html>
