@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Dark Knight Panel</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Arial;
+background:#040b16;
+color:white;
+}
+
+/* LOGIN */
+
+.login{
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+}
+
+.box{
+background:#0a1628;
+padding:30px;
+border-radius:15px;
+text-align:center;
+width:300px;
+box-shadow:0 0 20px #00e1ff;
+}
+
+.box img{
+width:110px;
+border-radius:15px;
+box-shadow:0 0 15px #00e1ff;
+}
+
+input{
+width:90%;
+padding:10px;
+margin:10px;
+border:none;
+border-radius:8px;
+background:#0f1e36;
+color:white;
+}
+
+button{
+background:#00e1ff;
+border:none;
+padding:10px 20px;
+border-radius:10px;
+font-weight:bold;
+cursor:pointer;
+box-shadow:0 0 10px #00e1ff;
+}
+
+/* PANEL */
+
+.panel{
+display:none;
+padding-bottom:80px;
+}
+
+.banner{
+margin:20px;
+background:#0a1628;
+border-radius:20px;
+box-shadow:0 0 20px #00e1ff;
+text-align:center;
+padding:10px;
+}
+
+.banner img{
+width:100%;
+border-radius:15px;
+}
+
+.menu{
+display:flex;
+justify-content:center;
+gap:10px;
+margin:20px;
+}
+
+.menu button{
+flex:1;
+background:#081322;
+color:#00e1ff;
+border:1px solid #00e1ff;
+padding:15px;
+border-radius:12px;
+box-shadow:0 0 10px #00e1ff;
+}
+
+.inputbox{
+margin:20px;
+}
+
+.inputbox input{
+width:100%;
+}
+
+.payload{
+margin:20px;
+}
+
+select{
+width:100%;
+padding:12px;
+border-radius:10px;
+background:#0f1e36;
+color:white;
+border:none;
+}
+
+.start{
+margin:20px;
+text-align:center;
+}
+
+.start button{
+width:100%;
+padding:15px;
+font-size:16px;
+}
+
+/* TOOLS */
+
+.tools{
+margin:20px;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:10px;
+}
+
+.tool{
+background:#081322;
+padding:20px;
+border-radius:12px;
+text-align:center;
+box-shadow:0 0 10px #00e1ff;
+}
+
+/* NAVBAR */
+
+.navbar{
+position:fixed;
+bottom:0;
+width:100%;
+background:#081322;
+display:flex;
+justify-content:space-around;
+padding:15px;
+box-shadow:0 0 20px #00e1ff;
+}
+
+.navbar div{
+color:#00e1ff;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- LOGIN -->
+
+<div class="login" id="login">
+
+<div class="box">
+
+<img src="img/e25932a5de2372617cdc245fd684fa3d.jpg">
+
+<h2>Dark Knight Login</h2>
+
+<input id="user" placeholder="Username">
+<input id="pass" type="password" placeholder="Password">
+
+<button onclick="login()">LOGIN</button>
+
+</div>
+
+</div>
+
+
+<!-- PANEL -->
+
+<div class="panel" id="panel">
+
+<div class="banner">
+
+<img src="img/wp11845436.jpg">
+
+</div>
+
+<div class="menu">
+
+<button>BUG NOMOR</button>
+<button>BUG GROUP</button>
+
+</div>
+
+<div class="inputbox">
+
+<p>LINK GROUP WA</p>
+
+<input placeholder="https://chat.whatsapp.com/...">
+
+</div>
+
+<div class="payload">
+
+<p>PILIH PAYLOAD</p>
+
+<select>
+
+<option>Delay & Click</option>
+<option>Crash Delay</option>
+<option>Message Loop</option>
+<option>Media Flood</option>
+<option>Sticker Spam</option>
+
+</select>
+
+</div>
+
+<div class="start">
+
+<button onclick="start()">START</button>
+
+</div>
+
+
+<div class="tools">
+
+<div class="tool">Sender</div>
+<div class="tool">Tools</div>
+<div class="tool">Info</div>
+<div class="tool">Chat</div>
+<div class="tool">Panel</div>
+<div class="tool">Settings</div>
+
+</div>
+
+</div>
+
+
+<div class="navbar">
+
+<div>Home</div>
+<div>Sender</div>
+<div>Info</div>
+<div>Tools</div>
+<div>Chat</div>
+
+</div>
+
+
+
+<script>
+
+let users={
+"Danzz":"240312",
+"Kalzz":"1234"
+}
+
+let currentUser=""
+
+function login(){
+
+let u=document.getElementById("user").value
+let p=document.getElementById("pass").value
+
+if(users[u]==p){
+
+currentUser=u
+
+document.getElementById("login").style.display="none"
+document.getElementById("panel").style.display="block"
+
+}else{
+
+alert("Login gagal")
+
+}
+
+}
+
+function start(){
+
+alert("Panel aktif")
+
+}
+
+</script>
+
+
+</body>
+  </html>
